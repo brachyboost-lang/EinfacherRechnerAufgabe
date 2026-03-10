@@ -179,6 +179,7 @@
             this.bt_divide.TabIndex = 27;
             this.bt_divide.Text = "/";
             this.bt_divide.UseVisualStyleBackColor = true;
+            this.bt_divide.Click += new System.EventHandler(this.bt_divide_Click);
             // 
             // bt_plus
             // 
@@ -189,6 +190,7 @@
             this.bt_plus.TabIndex = 28;
             this.bt_plus.Text = "+";
             this.bt_plus.UseVisualStyleBackColor = true;
+            this.bt_plus.Click += new System.EventHandler(this.bt_plus_Click);
             // 
             // bt_minus
             // 
@@ -199,6 +201,7 @@
             this.bt_minus.TabIndex = 29;
             this.bt_minus.Text = "-";
             this.bt_minus.UseVisualStyleBackColor = true;
+            this.bt_minus.Click += new System.EventHandler(this.bt_minus_Click);
             // 
             // bt_equals
             // 
@@ -209,6 +212,7 @@
             this.bt_equals.TabIndex = 30;
             this.bt_equals.Text = "=";
             this.bt_equals.UseVisualStyleBackColor = true;
+            this.bt_equals.Click += new System.EventHandler(this.bt_equals_Click);
             // 
             // bt_multiply
             // 
@@ -219,23 +223,24 @@
             this.bt_multiply.TabIndex = 31;
             this.bt_multiply.Text = "x";
             this.bt_multiply.UseVisualStyleBackColor = true;
+            this.bt_multiply.Click += new System.EventHandler(this.bt_multiply_Click);
             // 
             // tb_history
             // 
             this.tb_history.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_history.Location = new System.Drawing.Point(541, 59);
+            this.tb_history.Location = new System.Drawing.Point(361, 36);
             this.tb_history.Name = "tb_history";
-            this.tb_history.Size = new System.Drawing.Size(161, 38);
+            this.tb_history.Size = new System.Drawing.Size(343, 38);
             this.tb_history.TabIndex = 32;
             // 
             // tb_input
             // 
             this.tb_input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_input.Location = new System.Drawing.Point(541, 115);
+            this.tb_input.Location = new System.Drawing.Point(27, 115);
             this.tb_input.Name = "tb_input";
-            this.tb_input.Size = new System.Drawing.Size(161, 60);
+            this.tb_input.Size = new System.Drawing.Size(675, 60);
             this.tb_input.TabIndex = 33;
             // 
             // bt_clear
