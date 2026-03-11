@@ -48,6 +48,7 @@
             this.tb_input = new System.Windows.Forms.TextBox();
             this.bt_clear = new System.Windows.Forms.Button();
             this.tb_history2 = new System.Windows.Forms.TextBox();
+            this.bt_neg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_0
@@ -264,11 +265,23 @@
             this.tb_history2.Size = new System.Drawing.Size(220, 38);
             this.tb_history2.TabIndex = 35;
             // 
+            // bt_neg
+            // 
+            this.bt_neg.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_neg.Location = new System.Drawing.Point(27, 431);
+            this.bt_neg.Name = "bt_neg";
+            this.bt_neg.Size = new System.Drawing.Size(161, 56);
+            this.bt_neg.TabIndex = 36;
+            this.bt_neg.Text = "+/-";
+            this.bt_neg.UseVisualStyleBackColor = true;
+            this.bt_neg.Click += new System.EventHandler(this.bt_neg_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 507);
+            this.Controls.Add(this.bt_neg);
             this.Controls.Add(this.tb_history2);
             this.Controls.Add(this.bt_clear);
             this.Controls.Add(this.tb_input);
@@ -317,6 +330,7 @@
         private System.Windows.Forms.TextBox tb_input;
         private System.Windows.Forms.Button bt_clear;
         private System.Windows.Forms.TextBox tb_history2;
+        private System.Windows.Forms.Button bt_neg;
     }
 }
 

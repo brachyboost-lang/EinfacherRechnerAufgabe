@@ -230,6 +230,22 @@ namespace EinfacherRechnerAufgabe
             input += btn.Text;
             tb_input.Text = input;
         }
+
+        private void bt_neg_Click(object sender, EventArgs e)
+        {
+            double.TryParse(tb_input.Text, out double temp);
+            if (temp >= 0)
+                {
+                input = "-" + input;
+                tb_input.Text = input;
+            }
+            else
+            {
+                input = input.TrimStart('-');
+                tb_input.Text = input;
+            }
+        }
+
         private void ClearAll()
         {
             input = "";
