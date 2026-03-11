@@ -82,44 +82,6 @@ namespace EinfacherRechnerAufgabe
             ClearAll();
         }
 
-        private void button_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            input += btn.Text;
-            tb_input.Text = input;
-        }
-        private void ClearAll()
-        {
-            input = "";
-            num1 = 0;
-            num2 = 0;
-            result = 0;
-            mathOperator = "";
-            tb_input.Text = "";
-        }
-        private void Result()
-        {
-            switch (mathOperator)
-            {
-                case "+":
-                    result = num1 + num2;
-                    break;
-                case "-":
-                    result = num1 - num2;
-                    break;
-                case "x":
-                    result = num1 * num2;
-                    break;
-                case "/":
-                    if (num2 != 0)
-                        result = num1 / num2;
-                    else
-                        MessageBox.Show("Division durch Null ist nicht erlaubt! Willst du die Welt brennen sehen?");
-                    break;
-            }
-            tb_history.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString();
-            tb_input.Text = result.ToString();
-        }
 
         private void bt_multiply_Click(object sender, EventArgs e)
         {
@@ -188,6 +150,44 @@ namespace EinfacherRechnerAufgabe
                 input = "";
                 pending = true;
             }
+        }
+        private void button_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            input += btn.Text;
+            tb_input.Text = input;
+        }
+        private void ClearAll()
+        {
+            input = "";
+            num1 = 0;
+            num2 = 0;
+            result = 0;
+            mathOperator = "";
+            tb_input.Text = "";
+        }
+        private void Result()
+        {
+            switch (mathOperator)
+            {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "x":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 != 0)
+                        result = num1 / num2;
+                    else
+                        MessageBox.Show("Division durch Null ist nicht erlaubt! Willst du die Welt brennen sehen?");
+                    break;
+            }
+            tb_history.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString();
+            tb_input.Text = result.ToString();
         }
     }
 }
