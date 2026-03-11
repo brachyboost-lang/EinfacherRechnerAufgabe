@@ -211,7 +211,7 @@ namespace EinfacherRechnerAufgabe
                         }
                         break;
                 }
-                tb_history.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2 + " " + num3.ToString();
+                tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2 + " " + num3.ToString();
                 num2 = temp;
                 pending2 = false;
                 mathOperator2 = "";
