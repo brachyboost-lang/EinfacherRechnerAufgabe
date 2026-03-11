@@ -147,11 +147,29 @@ namespace EinfacherRechnerAufgabe
 
         private void bt_equals_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(input))
+            {
+                num2 = double.Parse(input);
+            }
+            else
+            {
+                return;
+            }
+
             Result();
+            input = result.ToString();
+            num1 = result;
+            pending = false;
+            mathOperator = "";
         }
 
         private void DoMathOperation(string op)
         {
+            if (string.IsNullOrEmpty(input))
+            {
+                return;
+            }
+
             if (!pending)
             {
                 num1 = double.Parse(input);
@@ -164,8 +182,11 @@ namespace EinfacherRechnerAufgabe
             {
                 num2 = double.Parse(input);
                 Result();
+                num1 = result;
                 mathOperator = op;
+                tb_history.Text = num1.ToString() + " " + mathOperator;
                 input = "";
+                pending = true;
             }
         }
     }
