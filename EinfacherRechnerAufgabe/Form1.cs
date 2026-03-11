@@ -16,7 +16,9 @@ namespace EinfacherRechnerAufgabe
         double num1, num2;
         double result;
         string mathOperator = "";
-        bool pending = false;
+        string mathOperator2 = "";
+        bool pending1 = false;
+        bool pending2 = false;
         public Form1()
         {
             InitializeComponent();
@@ -109,19 +111,47 @@ namespace EinfacherRechnerAufgabe
 
         private void bt_equals_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(input))
+            if (string.IsNullOrEmpty(input))
             {
-                num2 = double.Parse(input);
+                return;
+            }
+
+            // if there is a pending high-priority operation (e.g. + then x), evaluate it first
+            if (pending2)
+            {
+                double num3 = double.Parse(input);
+                double temp = 0;
+                switch (mathOperator2)
+                {
+                    case "x":
+                        temp = num2 * num3;
+                        break;
+                    case "/":
+                        if (num3 != 0)
+                            temp = num2 / num3;
+                        else
+                        {
+                            MessageBox.Show("Division durch Null ist nicht erlaubt! Willst du die Welt brennen sehen?");
+                            return;
+                        }
+                        break;
+                }
+
+                // use the result of the high-priority op as the second operand
+                num2 = temp;
+                pending2 = false;
+                mathOperator2 = "";
             }
             else
             {
-                return;
+                // normal case: second operand is the current input
+                num2 = double.Parse(input);
             }
 
             Result();
             input = result.ToString();
             num1 = result;
-            pending = false;
+            pending1 = false;
             mathOperator = "";
         }
 
@@ -132,23 +162,66 @@ namespace EinfacherRechnerAufgabe
                 return;
             }
 
-            if (!pending)
+            if (!pending1)
             {
                 num1 = double.Parse(input);
                 mathOperator = op;
                 tb_history.Text = num1.ToString() + " " + mathOperator;
                 input = "";
-                pending = true;
+                pending1 = true;
+                return;
             }
-            else
+
+            if (!pending2)
             {
                 num2 = double.Parse(input);
+
+                if ((mathOperator == "+" || mathOperator == "-") && (op == "x" || op == "/"))
+                {
+                    mathOperator2 = op;
+                    pending2 = true;
+                    tb_history.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2;
+                    input = "";
+                    return;
+                }
+
                 Result();
                 num1 = result;
                 mathOperator = op;
                 tb_history.Text = num1.ToString() + " " + mathOperator;
                 input = "";
-                pending = true;
+                pending1 = true;
+            }
+            else
+            {
+                double num3 = double.Parse(input);
+                double temp = 0;
+                switch (mathOperator2)
+                {
+                    case "x":
+                        temp = num2 * num3;
+                        break;
+                    case "/":
+                        if (num3 != 0)
+                            temp = num2 / num3;
+                        else
+                        {
+                            MessageBox.Show("Division durch Null ist nicht erlaubt! Willst du die Welt brennen sehen?");
+                            return;
+                        }
+                        break;
+                }
+
+                num2 = temp;
+                pending2 = false;
+                mathOperator2 = "";
+
+                Result();
+                num1 = result;
+                mathOperator = op;
+                tb_history.Text = num1.ToString() + " " + mathOperator;
+                input = "";
+                pending1 = true;
             }
         }
         private void button_Click(object sender, EventArgs e)
