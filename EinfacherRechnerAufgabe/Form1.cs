@@ -246,6 +246,17 @@ namespace EinfacherRechnerAufgabe
             }
         }
 
+        private void bt_del_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return;
+            }
+
+            input = input.Substring(0, input.Length - 1);
+            tb_input.Text = input;
+        }
+
         private void ClearAll()
         {
             input = "";

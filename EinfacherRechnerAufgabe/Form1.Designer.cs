@@ -49,6 +49,7 @@
             this.bt_clear = new System.Windows.Forms.Button();
             this.tb_history2 = new System.Windows.Forms.TextBox();
             this.bt_neg = new System.Windows.Forms.Button();
+            this.bt_del = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_0
@@ -250,9 +251,9 @@
             this.bt_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_clear.Location = new System.Drawing.Point(27, 181);
             this.bt_clear.Name = "bt_clear";
-            this.bt_clear.Size = new System.Drawing.Size(328, 56);
+            this.bt_clear.Size = new System.Drawing.Size(161, 56);
             this.bt_clear.TabIndex = 34;
-            this.bt_clear.Text = "CLEAR";
+            this.bt_clear.Text = "C";
             this.bt_clear.UseVisualStyleBackColor = true;
             this.bt_clear.Click += new System.EventHandler(this.bt_clear_Click);
             // 
@@ -276,11 +277,23 @@
             this.bt_neg.UseVisualStyleBackColor = true;
             this.bt_neg.Click += new System.EventHandler(this.bt_neg_Click);
             // 
+            // bt_del
+            // 
+            this.bt_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_del.Location = new System.Drawing.Point(194, 181);
+            this.bt_del.Name = "bt_del";
+            this.bt_del.Size = new System.Drawing.Size(161, 56);
+            this.bt_del.TabIndex = 37;
+            this.bt_del.Text = "DEL";
+            this.bt_del.UseVisualStyleBackColor = true;
+            this.bt_del.Click += new System.EventHandler(this.bt_del_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 507);
+            this.Controls.Add(this.bt_del);
             this.Controls.Add(this.bt_neg);
             this.Controls.Add(this.tb_history2);
             this.Controls.Add(this.bt_clear);
@@ -331,6 +344,7 @@
         private System.Windows.Forms.Button bt_clear;
         private System.Windows.Forms.TextBox tb_history2;
         private System.Windows.Forms.Button bt_neg;
+        private System.Windows.Forms.Button bt_del;
     }
 }
 
