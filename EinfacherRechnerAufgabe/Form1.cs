@@ -22,6 +22,9 @@ namespace EinfacherRechnerAufgabe
         public Form1()
         {
             InitializeComponent();
+            tb_input.TextAlign = HorizontalAlignment.Right;
+            tb_history.TextAlign = HorizontalAlignment.Right;
+            tb_history2.TextAlign = HorizontalAlignment.Right;
         }
 
         private void bt_0_Click(object sender, EventArgs e)
