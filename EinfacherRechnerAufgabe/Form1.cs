@@ -116,10 +116,10 @@ namespace EinfacherRechnerAufgabe
                 return;
             }
 
-            // if there is a pending high-priority operation (e.g. + then x), evaluate it first
             if (pending2)
             {
                 double num3 = double.Parse(input);
+                tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2 + " " + num3.ToString();
                 double temp = 0;
                 switch (mathOperator2)
                 {
@@ -137,15 +137,14 @@ namespace EinfacherRechnerAufgabe
                         break;
                 }
 
-                // use the result of the high-priority op as the second operand
                 num2 = temp;
                 pending2 = false;
                 mathOperator2 = "";
             }
             else
             {
-                // normal case: second operand is the current input
                 num2 = double.Parse(input);
+                tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString();
             }
 
             Result();
@@ -167,6 +166,7 @@ namespace EinfacherRechnerAufgabe
                 num1 = double.Parse(input);
                 mathOperator = op;
                 tb_history.Text = num1.ToString() + " " + mathOperator;
+                tb_history2.Text = "";
                 input = "";
                 pending1 = true;
                 return;
@@ -181,10 +181,12 @@ namespace EinfacherRechnerAufgabe
                     mathOperator2 = op;
                     pending2 = true;
                     tb_history.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2;
+                    tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2;
                     input = "";
                     return;
                 }
 
+                tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString();
                 Result();
                 num1 = result;
                 mathOperator = op;
@@ -195,6 +197,7 @@ namespace EinfacherRechnerAufgabe
             else
             {
                 num3 = double.Parse(input);
+                tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2 + " " + num3.ToString();
                 double temp = 0;
                 switch (mathOperator2)
                 {
@@ -211,7 +214,7 @@ namespace EinfacherRechnerAufgabe
                         }
                         break;
                 }
-                tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2 + " " + num3.ToString();
+
                 num2 = temp;
                 pending2 = false;
                 mathOperator2 = "";

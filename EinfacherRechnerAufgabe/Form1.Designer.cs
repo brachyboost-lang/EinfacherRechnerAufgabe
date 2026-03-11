@@ -232,9 +232,9 @@
             // 
             this.tb_history.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_history.Location = new System.Drawing.Point(359, 71);
+            this.tb_history.Location = new System.Drawing.Point(27, 71);
             this.tb_history.Name = "tb_history";
-            this.tb_history.Size = new System.Drawing.Size(343, 38);
+            this.tb_history.Size = new System.Drawing.Size(675, 38);
             this.tb_history.TabIndex = 32;
             // 
             // tb_input
@@ -261,9 +261,9 @@
             // 
             this.tb_history2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_history2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_history2.Location = new System.Drawing.Point(484, 27);
+            this.tb_history2.Location = new System.Drawing.Point(27, 27);
             this.tb_history2.Name = "tb_history2";
-            this.tb_history2.Size = new System.Drawing.Size(220, 38);
+            this.tb_history2.Size = new System.Drawing.Size(677, 38);
             this.tb_history2.TabIndex = 35;
             // 
             // bt_neg
