@@ -13,7 +13,7 @@ namespace EinfacherRechnerAufgabe
     public partial class Form1 : Form
     {
         string input = "";
-        double num1, num2;
+        double num1, num2, num3;
         double result;
         string mathOperator = "";
         string mathOperator2 = "";
@@ -194,7 +194,7 @@ namespace EinfacherRechnerAufgabe
             }
             else
             {
-                double num3 = double.Parse(input);
+                num3 = double.Parse(input);
                 double temp = 0;
                 switch (mathOperator2)
                 {
@@ -211,7 +211,7 @@ namespace EinfacherRechnerAufgabe
                         }
                         break;
                 }
-
+                tb_history.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2 + " " + num3.ToString();
                 num2 = temp;
                 pending2 = false;
                 mathOperator2 = "";

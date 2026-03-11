@@ -47,6 +47,7 @@
             this.tb_history = new System.Windows.Forms.TextBox();
             this.tb_input = new System.Windows.Forms.TextBox();
             this.bt_clear = new System.Windows.Forms.Button();
+            this.tb_history2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bt_0
@@ -229,7 +230,7 @@
             // 
             this.tb_history.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_history.Location = new System.Drawing.Point(361, 36);
+            this.tb_history.Location = new System.Drawing.Point(359, 71);
             this.tb_history.Name = "tb_history";
             this.tb_history.Size = new System.Drawing.Size(343, 38);
             this.tb_history.TabIndex = 32;
@@ -254,11 +255,21 @@
             this.bt_clear.UseVisualStyleBackColor = true;
             this.bt_clear.Click += new System.EventHandler(this.bt_clear_Click);
             // 
+            // tb_history2
+            // 
+            this.tb_history2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_history2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_history2.Location = new System.Drawing.Point(484, 27);
+            this.tb_history2.Name = "tb_history2";
+            this.tb_history2.Size = new System.Drawing.Size(220, 38);
+            this.tb_history2.TabIndex = 35;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 507);
+            this.Controls.Add(this.tb_history2);
             this.Controls.Add(this.bt_clear);
             this.Controls.Add(this.tb_input);
             this.Controls.Add(this.tb_history);
@@ -305,6 +316,7 @@
         private System.Windows.Forms.TextBox tb_history;
         private System.Windows.Forms.TextBox tb_input;
         private System.Windows.Forms.Button bt_clear;
+        private System.Windows.Forms.TextBox tb_history2;
     }
 }
 
