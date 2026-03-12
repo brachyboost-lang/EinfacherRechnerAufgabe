@@ -53,6 +53,12 @@
             this.bt_sqrt = new System.Windows.Forms.Button();
             this.bt_quad = new System.Windows.Forms.Button();
             this.lb_bin = new System.Windows.Forms.Label();
+            this.lb_hex = new System.Windows.Forms.Label();
+            this.tb_bin = new System.Windows.Forms.TextBox();
+            this.tb_hex = new System.Windows.Forms.TextBox();
+            this.lb_input = new System.Windows.Forms.Label();
+            this.lb_formula = new System.Windows.Forms.Label();
+            this.lb_math = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bt_0
@@ -316,17 +322,82 @@
             // lb_bin
             // 
             this.lb_bin.AutoSize = true;
-            this.lb_bin.Location = new System.Drawing.Point(38, 177);
+            this.lb_bin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_bin.Location = new System.Drawing.Point(131, 173);
             this.lb_bin.Name = "lb_bin";
-            this.lb_bin.Size = new System.Drawing.Size(34, 13);
+            this.lb_bin.Size = new System.Drawing.Size(85, 31);
             this.lb_bin.TabIndex = 40;
             this.lb_bin.Text = "Binär:";
+            // 
+            // lb_hex
+            // 
+            this.lb_hex.AutoSize = true;
+            this.lb_hex.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_hex.Location = new System.Drawing.Point(38, 208);
+            this.lb_hex.Name = "lb_hex";
+            this.lb_hex.Size = new System.Drawing.Size(178, 31);
+            this.lb_hex.TabIndex = 41;
+            this.lb_hex.Text = "Hexadezimal:";
+            // 
+            // tb_bin
+            // 
+            this.tb_bin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_bin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_bin.Location = new System.Drawing.Point(214, 170);
+            this.tb_bin.Name = "tb_bin";
+            this.tb_bin.Size = new System.Drawing.Size(488, 38);
+            this.tb_bin.TabIndex = 42;
+            // 
+            // tb_hex
+            // 
+            this.tb_hex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_hex.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_hex.Location = new System.Drawing.Point(214, 208);
+            this.tb_hex.Name = "tb_hex";
+            this.tb_hex.Size = new System.Drawing.Size(488, 38);
+            this.tb_hex.TabIndex = 43;
+            // 
+            // lb_input
+            // 
+            this.lb_input.AutoSize = true;
+            this.lb_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_input.Location = new System.Drawing.Point(24, 91);
+            this.lb_input.Name = "lb_input";
+            this.lb_input.Size = new System.Drawing.Size(99, 17);
+            this.lb_input.TabIndex = 44;
+            this.lb_input.Text = "Input/Ergebnis";
+            // 
+            // lb_formula
+            // 
+            this.lb_formula.AutoSize = true;
+            this.lb_formula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_formula.Location = new System.Drawing.Point(24, 3);
+            this.lb_formula.Name = "lb_formula";
+            this.lb_formula.Size = new System.Drawing.Size(51, 17);
+            this.lb_formula.TabIndex = 45;
+            this.lb_formula.Text = "Formel";
+            // 
+            // lb_math
+            // 
+            this.lb_math.AutoSize = true;
+            this.lb_math.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_math.Location = new System.Drawing.Point(24, 47);
+            this.lb_math.Name = "lb_math";
+            this.lb_math.Size = new System.Drawing.Size(73, 17);
+            this.lb_math.TabIndex = 46;
+            this.lb_math.Text = "Rechnung";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 633);
+            this.Controls.Add(this.lb_math);
+            this.Controls.Add(this.lb_formula);
+            this.Controls.Add(this.lb_input);
+            this.Controls.Add(this.tb_hex);
+            this.Controls.Add(this.tb_bin);
+            this.Controls.Add(this.lb_hex);
             this.Controls.Add(this.lb_bin);
             this.Controls.Add(this.bt_quad);
             this.Controls.Add(this.bt_sqrt);
@@ -385,6 +456,12 @@
         private System.Windows.Forms.Button bt_sqrt;
         private System.Windows.Forms.Button bt_quad;
         private System.Windows.Forms.Label lb_bin;
+        private System.Windows.Forms.Label lb_hex;
+        private System.Windows.Forms.TextBox tb_bin;
+        private System.Windows.Forms.TextBox tb_hex;
+        private System.Windows.Forms.Label lb_input;
+        private System.Windows.Forms.Label lb_formula;
+        private System.Windows.Forms.Label lb_math;
     }
 }
 
