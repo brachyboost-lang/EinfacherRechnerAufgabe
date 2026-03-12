@@ -172,6 +172,7 @@ namespace EinfacherRechnerAufgabe
                 tb_history.Text = num1.ToString() + " " + mathOperator;
                 tb_history2.Text = "";
                 input = "";
+                UpdateBaseDisplays(num1);
                 pending1 = true;
                 return;
             }
@@ -187,7 +188,7 @@ namespace EinfacherRechnerAufgabe
                     tb_history.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2;
                     tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2;
                     input = "";
-                UpdateBaseDisplays();
+                    UpdateBaseDisplays(num2);
                     return;
                 }
 
@@ -197,6 +198,7 @@ namespace EinfacherRechnerAufgabe
                 mathOperator = op;
                 tb_history.Text = num1.ToString() + " " + mathOperator;
                 input = "";
+                UpdateBaseDisplays(num1);
                 pending1 = true;
             }
             else
@@ -229,6 +231,7 @@ namespace EinfacherRechnerAufgabe
                 mathOperator = op;
                 tb_history.Text = num1.ToString() + " " + mathOperator;
                 input = "";
+                UpdateBaseDisplays(num1);
                 pending1 = true;
             }
         }
@@ -278,6 +281,42 @@ namespace EinfacherRechnerAufgabe
                 return;
             }
 
+            if (double.IsNaN(val) || double.IsInfinity(val))
+            {
+                tb_bin.Text = "";
+                tb_hex.Text = "";
+                return;
+            }
+
+            long l;
+            try
+            {
+                l = (long)val;
+            }
+            catch
+            {
+                tb_bin.Text = "";
+                tb_hex.Text = "";
+                return;
+            }
+
+            if (l == long.MinValue)
+            {
+                tb_bin.Text = "";
+                tb_hex.Text = "";
+                return;
+            }
+
+            bool negative = l < 0;
+            long abs = negative ? -l : l;
+            string bin = Convert.ToString(abs, 2);
+            string hex = abs.ToString("X");
+            tb_bin.Text = (negative ? "-" : "") + bin;
+            tb_hex.Text = (negative ? "-" : "") + hex;
+        }
+
+        private void UpdateBaseDisplays(double val)
+        {
             if (double.IsNaN(val) || double.IsInfinity(val))
             {
                 tb_bin.Text = "";
