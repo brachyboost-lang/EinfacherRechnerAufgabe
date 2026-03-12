@@ -263,14 +263,76 @@ namespace EinfacherRechnerAufgabe
             tb_input.Text = input;
         }
 
+        private void bt_quad_Click(object sender, EventArgs e)
+        {
+            double value;
+            if (string.IsNullOrEmpty(input))
+            {
+                if (!double.TryParse(tb_input.Text, out value))
+                    return;
+            }
+            else
+            {
+                value = double.Parse(input);
+            }
+
+            double sq = value * value;
+            input = sq.ToString();
+            tb_input.Text = input;
+            tb_history.Text = value.ToString() + "^2 = " + sq.ToString();
+            tb_history2.Text = "sqr(" + value.ToString() + ")";
+            result = sq;
+            num1 = result;
+            pending1 = false;
+            pending2 = false;
+            mathOperator = "";
+            mathOperator2 = "";
+        }
+
+        private void bt_sqrt_Click(object sender, EventArgs e)
+        {
+            double value;
+            if (string.IsNullOrEmpty(input))
+            {
+                if (!double.TryParse(tb_input.Text, out value))
+                    return;
+            }
+            else
+            {
+                value = double.Parse(input);
+            }
+
+            if (value < 0)
+            {
+                MessageBox.Show("Quadratwurzel einer negativen Zahl ist nicht erlaubt.");
+                return;
+            }
+
+            double r = Math.Sqrt(value);
+            input = r.ToString();
+            tb_input.Text = input;
+            tb_history.Text = "√(" + value.ToString() + ") = " + r.ToString();
+            tb_history2.Text = "sqrt(" + value.ToString() + ")";
+            result = r;
+            num1 = result;
+            pending1 = false;
+            pending2 = false;
+            mathOperator = "";
+            mathOperator2 = "";
+        }
+
         private void ClearAll()
         {
             input = "";
             num1 = 0;
             num2 = 0;
+            num3 = 0;
             result = 0;
             mathOperator = "";
+            mathOperator2 = "";
             tb_input.Text = "";
+            tb_history.Text = "";
+            tb_history2.Text = "";
         }
         private void Result()
         {
