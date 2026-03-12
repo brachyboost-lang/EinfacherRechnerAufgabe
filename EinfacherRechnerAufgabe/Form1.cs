@@ -155,6 +155,7 @@ namespace EinfacherRechnerAufgabe
             num1 = result;
             pending1 = false;
             mathOperator = "";
+            UpdateBaseDisplays();
         }
 
         private void DoMathOperation(string op)
@@ -186,6 +187,7 @@ namespace EinfacherRechnerAufgabe
                     tb_history.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2;
                     tb_history2.Text = num1.ToString() + " " + mathOperator + " " + num2.ToString() + " " + mathOperator2;
                     input = "";
+                UpdateBaseDisplays();
                     return;
                 }
 
@@ -235,6 +237,7 @@ namespace EinfacherRechnerAufgabe
             Button btn = sender as Button;
             input += btn.Text;
             tb_input.Text = input;
+            UpdateBaseDisplays();
         }
 
         private void bt_neg_Click(object sender, EventArgs e)
@@ -244,11 +247,13 @@ namespace EinfacherRechnerAufgabe
                 {
                 input = "-" + input;
                 tb_input.Text = input;
+                UpdateBaseDisplays();
             }
             else
             {
                 input = input.TrimStart('-');
                 tb_input.Text = input;
+                UpdateBaseDisplays();
             }
         }
 
@@ -261,6 +266,50 @@ namespace EinfacherRechnerAufgabe
 
             input = input.Substring(0, input.Length - 1);
             tb_input.Text = input;
+            UpdateBaseDisplays();
+        }
+
+        private void UpdateBaseDisplays()
+        {
+            if (!double.TryParse(tb_input.Text, out double val))
+            {
+                tb_bin.Text = "";
+                tb_hex.Text = "";
+                return;
+            }
+
+            if (double.IsNaN(val) || double.IsInfinity(val))
+            {
+                tb_bin.Text = "";
+                tb_hex.Text = "";
+                return;
+            }
+
+            long l;
+            try
+            {
+                l = (long)val;
+            }
+            catch
+            {
+                tb_bin.Text = "";
+                tb_hex.Text = "";
+                return;
+            }
+
+            if (l == long.MinValue)
+            {
+                tb_bin.Text = "";
+                tb_hex.Text = "";
+                return;
+            }
+
+            bool negative = l < 0;
+            long abs = negative ? -l : l;
+            string bin = Convert.ToString(abs, 2);
+            string hex = abs.ToString("X");
+            tb_bin.Text = (negative ? "-" : "") + bin;
+            tb_hex.Text = (negative ? "-" : "") + hex;
         }
 
         private void bt_quad_Click(object sender, EventArgs e)
@@ -287,6 +336,7 @@ namespace EinfacherRechnerAufgabe
             pending2 = false;
             mathOperator = "";
             mathOperator2 = "";
+            UpdateBaseDisplays();
         }
 
         private void bt_sqrt_Click(object sender, EventArgs e)
@@ -319,6 +369,7 @@ namespace EinfacherRechnerAufgabe
             pending2 = false;
             mathOperator = "";
             mathOperator2 = "";
+            UpdateBaseDisplays();
         }
 
         private void ClearAll()
@@ -333,6 +384,8 @@ namespace EinfacherRechnerAufgabe
             tb_input.Text = "";
             tb_history.Text = "";
             tb_history2.Text = "";
+            tb_bin.Text = "";
+            tb_hex.Text = "";
         }
         private void Result()
         {
